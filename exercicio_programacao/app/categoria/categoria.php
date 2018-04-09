@@ -8,29 +8,31 @@
 
 
 
-                <table>
+
+                <table id="tabela_index" class="table table-bordered table-dark">
                     <thead>
                     <tr>
                         <th scope="col">Nome</th>
                         <th scope="col">Descrição</th>
                     </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($categorias as $categoria):?>
-                        <tr>
-                            <td><?= $categoria->getNome();?></td>
-                            <td><?= $categoria->getDescricao();?></td>
-                        </tr>
-                        <?php endforeach; ?>
-
-                        </tbody>
-
+                    </thead>
+                    <tbody>
+                    <?php foreach ($categorias as $categoria):?>
+                    <tr>
+                        <th scope="row"><?= $categoria->getNome(); ?></th>
+                        <td><?= $categoria->getDescricao(); ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                    </tbody>
                 </table>
+                <form action="">
+
+                    <a href="../controller/IndexController.php?rota=inserir"><button href="../controller/CategoriaController.php?rota=inserir"> INSERIR </button></a>
+
+                </form>
 
 
                 <?php require_once __DIR__. '/../templates/rodape.php'; ?>
             </body>
         </head>
     </html>
-
-

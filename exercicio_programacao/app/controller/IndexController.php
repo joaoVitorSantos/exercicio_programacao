@@ -4,10 +4,11 @@
 
     if (isset($_GET['action'])){
         $action = $_GET['action'];
-    }else{
+    } elseif ($rota == "inserir"){
+        header('Location: ../view/inserir.php');
+    }   else {
         $action = 'index';
     }
-
     switch ($action){
         case 'index':
             $crud = new CategoriaCrud();

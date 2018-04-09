@@ -75,17 +75,7 @@ class CategoriaCrud
 
     }
 
-//    public function escolheColuna(Categoria $categoria, $posicao)
-//    {
-//
-//
-//        if ($posicao == "nome"){
-//            $nome_categoria = $categoria->getNome();
-//            return $nome_categoria;
-//        }
-//    }
-//
-//
+
     public function updateCategoria(Categoria $categoria, $coluna, $novo_valor){
         $crud = new CategoriaCrud();
         if ($coluna == "nome_categoria"){
