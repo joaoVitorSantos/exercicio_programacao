@@ -4,16 +4,23 @@
 
     if (isset($_GET['action'])){
         $action = $_GET['action'];
-    } elseif ($rota == "inserir"){
-        header('Location: ../view/inserir.php');
-    }   else {
+    }else {
         $action = 'index';
     }
     switch ($action){
         case 'index':
             $crud = new CategoriaCrud();
             $categorias = $crud->getCategorias();
-            include '../categoria/categoria.php';
+            include '../templates/cabecalho.php';
+            include '../view/categoria.php';
+            include '../templates/rodape.php';
             break;
+        case 'show':
+            $id = $_GET['id'];
+            $crud = new CategoriaCrud();
+            $categoria = $crud->getCategoria($id);
+            include '../templates/cabecalho.php';
+            include '../view/show.php';
+            include '../templates/rodape.php';
     }
 ?>

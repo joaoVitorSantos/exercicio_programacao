@@ -33,7 +33,7 @@ class CategoriaCrud
         //FETCH - Transforma o resultado em um array associativo
         $categoria = $resultado->fetch(PDO::FETCH_ASSOC);
         //Criar Objeto do Tipo Categoria
-        $objcat = new Categoria($categoria['id_categoria'], $categoria['nome_categoria']);
+        $objcat = new Categoria($categoria['nome_categoria'], $categoria['id_categoria']);
         //Retornar um objeto categoria com os valores
         return $objcat;
 
