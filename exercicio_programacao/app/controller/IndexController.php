@@ -1,6 +1,7 @@
 <?php
 
     require_once __DIR__. '/../models/CategoriaCrud.php';
+    require_once __DIR__. '/../models/ProdutoCrud.php';
 
     if (isset($_GET['action'])){
         $action = $_GET['action'];
@@ -15,12 +16,19 @@
             include '../view/categoria.php';
             include '../templates/rodape.php';
             break;
-        case 'show':
+        case 'showCategoria':
             $id = $_GET['id'];
             $crud = new CategoriaCrud();
             $categoria = $crud->getCategoria($id);
             include '../templates/cabecalho.php';
-            include '../view/show.php';
+            include '../view/showCategoria.php';
             include '../templates/rodape.php';
+        case 'indexProduto':
+            $crud = new ProdutoCrud();
+            $produtos = $crud->getProdutos();
+            include '../templates/cabecalho.php';
+            include '../view/showProduto.php';
+            include '../templates/rodape.php';
+
     }
 ?>

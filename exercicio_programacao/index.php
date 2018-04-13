@@ -11,6 +11,7 @@
 ?>
 	<ul>
         <li><a href="app/controller/IndexController.php">Categorias</a></li>
+        <li><a href="app/controller/IndexController.php?action=indexProduto">Produtos</a></li>
 		<!--<li><a href="produtos.php?categoria=1">Eletrônicos</a>
 		<li><a href="produtos.php?categoria=2">Esportes</a>
 		<li><a href="produtos.php?categoria=3">Móveis</a>
