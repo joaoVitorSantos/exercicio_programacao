@@ -23,12 +23,13 @@
             include '../templates/cabecalho.php';
             include '../view/showCategoria.php';
             include '../templates/rodape.php';
+            break;
         case 'indexProduto':
             $crud = new ProdutoCrud();
             $produtos = $crud->getProdutos();
             include '../templates/cabecalho.php';
-            include '../view/showProduto.php';
+            include '../view/produto.php';
             include '../templates/rodape.php';
-
+            break;
     }
 ?>

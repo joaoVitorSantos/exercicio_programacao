@@ -41,8 +41,25 @@ class ProdutoCrud
         return $listaProdutos;
 
     }
+
+    public function getProduto($id){
+        $sql = "SELECT * FROM produto WHERE id_produto = " . "{$id}";
+
+        $consulta = $this->conexao->query($sql);
+
+        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+
+        $produto = new Produto($resultado['id_produto'], $resultado['nome_produto'], $resultado['descricao_produto'], $resultado['preco_produto'], $resultado['id_categoria'], $resultado['foto_produto']) ;
+
+        return $produto;
+    }
     
 }
+
+//Teste
+//$crud = new ProdutoCrud();
+//$esporte = $crud->getProduto(5);
+//print_r($esporte);
 
 
 ?>
