@@ -15,7 +15,7 @@
                     <tbody>
                     <?php foreach ($categorias as $categoria):?>
                     <tr>
-                        <th scope="row"><a href="?action=showCategoria&id=<?= $categoria->getID()?>"><?= $categoria->getNome(); ?></a></th>
+                        <th scope="row"><a href="CategoriaController?action=showCategoria&id=<?= $categoria->getID()?>"><?= $categoria->getNome(); ?></a></th>
                         <td><?= $categoria->getDescricao(); ?></td>
                     </tr>
                     <?php endforeach; ?>

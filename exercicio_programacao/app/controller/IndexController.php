@@ -16,14 +16,6 @@
             include '../view/categoria.php';
             include '../templates/rodape.php';
             break;
-        case 'showCategoria':
-            $id = $_GET['id'];
-            $crud = new CategoriaCrud();
-            $categoria = $crud->getCategoria($id);
-            include '../templates/cabecalho.php';
-            include '../view/showCategoria.php';
-            include '../templates/rodape.php';
-            break;
         case 'indexProduto':
             $crud = new ProdutoCrud();
             $produtos = $crud->getProdutos();
