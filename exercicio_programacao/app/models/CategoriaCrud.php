@@ -67,7 +67,7 @@ class CategoriaCrud
     {
 
 //        $this->conexao = DBConnection::getConexao();
-        $sql = "INSERT INTO categoria(nome_categoria, descricao_categoria, id_categoria) VALUES" . "('{$cat->getNome()}', '{$cat->getDescricao()}', '{$cat->getId()}')";
+        $sql = "INSERT INTO categoria(nome_categoria, descricao_categoria) VALUES" . "('{$cat->getNome()}', '{$cat->getDescricao()}')";
 
 
         $this->conexao->exec($sql);
@@ -76,25 +76,10 @@ class CategoriaCrud
     }
 
 
-    public function updateCategoria(Categoria $categoria, $coluna, $novo_valor){
-        $crud = new CategoriaCrud();
-        if ($coluna == "nome_categoria"){
-              $nome_categoria = $categoria->getNome();
-              $sql = "UPDATE categoria SET nome_categoria". "=" . "{$novo_valor}" . "WHERE id_categoria = " . "{$categoria->getId()}";
-              $resultado = $crud->conexao->exec($sql);
-        }
-        elseif ($coluna == "descricao_categoria"){
-            $descricao_categoria = $categoria->getDescricao();
-            return $descricao_categoria;
-        }
-        $id        = $categoria->getId();
+    public function updateCategoria(Categoria $categoria){
+        $sql = "UPDATE categoria SET nome ='". $categoria->getNome(). "', descricao_categoria ='". $categoria ->getDescricao(). "WHERE id_categoria =" . $categoria->getId();
 
-        $sql = "UPDATE categoria SET". "{$coluna}" . "=" . "{$novo_valor}" . "WHERE id_categoria = " . "{$id}";
-
-        $crud = new CategoriaCrud();
-        $atualizacao = $crud->conexao->exec($sql);
-        return $atualizacao;
-
+        $this->conexao->exec($sql);
     }
 
       public function deleteCategoria($id){

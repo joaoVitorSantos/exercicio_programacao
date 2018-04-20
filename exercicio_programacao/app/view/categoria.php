@@ -1,8 +1,8 @@
 <?php require_once __DIR__ . '/../controller/IndexController.php' ?>
 <?php require_once __DIR__ . '/../templates/cabecalho.php' ?>
 
-                <a href="">Incluir nova Categoria...</a>
-                <a href=""></a>
+                <a href="../controller/CategoriaController.php?action=inserir">Incluir nova Categoria...</a>
+                <a href="../controller/CategoriaController.php?action=indexEditar"></a>
 
 
                 <table id="tabela_index" class="table table-bordered table-dark">

@@ -27,7 +27,7 @@
                 </table>
                 <form action="">
 
-                    <a href="../controller/IndexController.php?rota=inserir"><button href="../controller/CategoriaController.php?rota=inserir"> INSERIR </button></a>
+                    <a href="../controller/CategoriaController.php?rota=inserir"><button href="../controller/CategoriaController.php?rota=inserir"> INSERIR </button></a>
 
                 </form>
 
